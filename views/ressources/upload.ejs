@@ -1,0 +1,36 @@
+
+<h1> Upload votre fichier</h1>
+<form action="main_page" method="POST" enctype="multipart/form-data" >
+<input id="file" name="file" type="file" />
+<input type="text" name="test" />
+        <input type="submit" value="Submit">
+</form>
+<button id="startbutton">Prendre une photo</button>
+
+<canvas id="canvas" </canvas>
+
+  <script>
+  var   canvas = document.querySelector('#canvas');
+  var startbutton  = document.querySelector('#startbutton');
+  var input = document.querySelector('#file');
+
+  startbutton.addEventListener('click', function(ev){
+    console.log("salut la companie");
+    //console.log(file.files[0]);
+    var file = input.files[0];
+    var fr = new FileReader();
+    fr.onload = function(){
+      img = new Image();
+      img.onload = function(){
+        canvas.width = img.width;      // set canvas size big enough for the image
+        canvas.height = img.height;
+        var ctx = canvas.getContext("2d");
+        ctx.drawImage(img,0,0);
+      }
+      img.src = fr.result;
+    }   // onload fires after reading is complete
+    fr.readAsDataURL(file);
+
+    ev.preventDefault();
+  });
+</script>

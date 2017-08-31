@@ -4,6 +4,7 @@
   "description": "camagru en nodejs",
   "main": "main.js",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "ejs": "^2.5.7",
     "express": "^4.15.4"
   },
@@ -12,5 +13,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nithramir/js_cmagru.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Nithramir/js_cmagru/issues"
+  },
+  "homepage": "https://github.com/Nithramir/js_cmagru#readme"
 }
